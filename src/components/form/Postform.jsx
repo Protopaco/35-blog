@@ -14,9 +14,6 @@ const BlogForm = () => {
         event.preventDefault();
         dispatch(createPost({ title, body, id }));
         setId(id + 1);
-        console.log(title);
-        console.log(body);
-        console.log(id);
     };
 
     return (
