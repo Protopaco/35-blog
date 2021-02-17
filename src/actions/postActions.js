@@ -1,4 +1,3 @@
-import { ids } from 'webpack';
 
 export const CREATE_POST = 'CREATE_POST';
 export const createPost = post => ({

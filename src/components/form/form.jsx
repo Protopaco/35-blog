@@ -7,11 +7,13 @@ const BlogForm = () => {
 
     const [title, setTitle] = useState();
     const [body, setBody] = useState();
+    const [id, setId] = useState(1);
 
 
     const handleSubmit = event => {
         event.preventDefault();
-        dispatch(createPost({ title, body }));
+        dispatch(createPost({ title, body, id }));
+        setId(id + 1);
     };
 
     return (
