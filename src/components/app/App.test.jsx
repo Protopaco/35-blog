@@ -1,11 +1,12 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import App from './App';
+import { PostProvider } from '../../state/PostProvider';
 
 describe('App component', () => {
   afterEach(() => cleanup());
   it('renders App', () => {
-    const { asFragment } = render(<App />);
+    const { asFragment } = render(<PostProvider><App /></PostProvider>);
     expect(asFragment()).toMatchSnapshot();
   });
 });
