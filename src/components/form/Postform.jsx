@@ -17,7 +17,6 @@ const PostForm = () => {
     };
 
     return (
-
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
@@ -25,7 +24,6 @@ const PostForm = () => {
                 value={title}
                 onChange={({ target }) => setTitle(target.value)}
             />
-
             <input
                 type="body"
                 placeholder="Body"
@@ -34,7 +32,6 @@ const PostForm = () => {
             />
             <button>Create Post</button>
         </form>
-
     );
 };
 
