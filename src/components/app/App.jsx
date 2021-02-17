@@ -1,5 +1,13 @@
 import React from 'react';
+import PostList from '../posts/PostList';
+import PostForm from '../form/PostForm';
+
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <PostForm />
+      <PostList />
+    </>
+  );
 }
