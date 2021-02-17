@@ -17,8 +17,6 @@ const PostList = () => {
             {postElements}
         </ul>
     );
-
-
 };
 
 export default PostList;
