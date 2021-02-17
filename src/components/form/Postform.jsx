@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createPost } from '../../actions/postActions';
 import { useDispatch } from '../../state/PostProvider';
 
-const BlogForm = () => {
+const PostForm = () => {
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState();
@@ -38,4 +38,4 @@ const BlogForm = () => {
     );
 };
 
-export default BlogForm;
+export default PostForm;
