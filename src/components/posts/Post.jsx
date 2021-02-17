@@ -7,6 +7,7 @@ const Post = ({ title, body, id }) => {
     const dispatch = useDispatch();
 
     const handleClick = () => {
+        console.log(id);
         dispatch(deletePost(id));
     };
 

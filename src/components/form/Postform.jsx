@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createPost } from '../../actions/postActions';
-import { useDispatch } from '../../state/DogProvider';
+import { useDispatch } from '../../state/PostProvider';
 
 const BlogForm = () => {
     const dispatch = useDispatch();
@@ -14,6 +14,9 @@ const BlogForm = () => {
         event.preventDefault();
         dispatch(createPost({ title, body, id }));
         setId(id + 1);
+        console.log(title);
+        console.log(body);
+        console.log(id);
     };
 
     return (

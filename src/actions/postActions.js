@@ -8,5 +8,5 @@ export const createPost = post => ({
 export const DELETE_POST = 'DELETE_POST';
 export const deletePost = id => ({
     type: DELETE_POST,
-    playload: id
+    payload: id
 });
