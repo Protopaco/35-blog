@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../../actions/postActions';
+import { deleteAllComments } from '../../actions/commentActions';
 
 const Post = ({ title, body, id }) => {
     const dispatch = useDispatch();
 
     const handleClick = () => {
         dispatch(deletePost(id));
+        dispatch(deleteAllComments(id));
     };
 
     return (
