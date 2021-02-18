@@ -1,10 +1,10 @@
 import { CREATE_POST, DELETE_POST } from '../actions/postActions';
 
-export const initialState = {
+const initialState = {
     posts: []
 };
 
-export default function reducer(state, action) {
+export default function reducer(state = initialState, action) {
     switch (action.type) {
         case CREATE_POST:
             return {
