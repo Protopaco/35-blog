@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from '../../state/PostProvider';
+import { useDispatch } from 'react-redux';
 import { deletePost } from '../../actions/postActions';
+import { deleteAllComments } from '../../actions/commentActions';
+import { useHistory } from 'react-router-dom';
 
-const Post = ({ title, body, id }) => {
+const Post = ({ title, body, postId }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleClick = () => {
-        dispatch(deletePost(id));
+        dispatch(deletePost(postId));
+        dispatch(deleteAllComments(postId));
+        history.push('/');
     };
 
     return (
@@ -25,7 +30,7 @@ const Post = ({ title, body, id }) => {
 Post.propTypes = {
     title: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    postId: PropTypes.number.isRequired
 };
 
 export default Post;

@@ -1,10 +1,10 @@
-import { createPost, deletePost } from '../actions/postActions';
+import { createPost, deletePost, updatePostId } from '../actions/postActions';
 import reducer from './postReducer';
 
 const newPost = {
     title: 'hello',
     body: 'world',
-    id: 5
+    postId: 5
 };
 
 describe('post reducer tests', () => {
@@ -26,9 +26,20 @@ describe('post reducer tests', () => {
             posts: [newPost]
         };
 
-        const action = deletePost(newPost.id);
+        const action = deletePost(newPost.postId);
 
         expect(reducer(state, action)).toEqual({ posts: [] });
+    });
+
+    it('increments the post id', () => {
+        const state = {
+            posts: [],
+            postId: 3
+        };
+
+        const action = updatePostId(state);
+
+        expect(reducer(state, action)).toEqual({ posts: [], postId: 4 });
     });
 
 });
