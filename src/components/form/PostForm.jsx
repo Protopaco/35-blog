@@ -14,6 +14,7 @@ const PostForm = () => {
         event.preventDefault();
         dispatch(createPost({ title, body, postId }));
         dispatch(updatePostId(postId));
+
     };
 
     return (
