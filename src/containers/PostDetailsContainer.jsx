@@ -4,7 +4,7 @@ import CommentForm from '../components/comments/CommentForm';
 import CommentList from '../components/comments/CommentList';
 import { getPosts } from '../selectors/postSelectors';
 import { useSelector } from 'react-redux';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import { propTypes } from 'prop-types';
 
 export default function PostDetailsContainer(props) {
     const postId = Number(props.match.params.id);
