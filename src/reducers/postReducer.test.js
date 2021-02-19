@@ -4,7 +4,7 @@ import reducer from './postReducer';
 const newPost = {
     title: 'hello',
     body: 'world',
-    PostId: 5
+    postId: 5
 };
 
 describe('post reducer tests', () => {
