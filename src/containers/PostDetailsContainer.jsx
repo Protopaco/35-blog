@@ -4,7 +4,7 @@ import CommentForm from '../components/comments/CommentForm';
 import CommentList from '../components/comments/CommentList';
 import { getPosts } from '../selectors/postSelectors';
 import { useSelector } from 'react-redux';
-import { propTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default function PostDetailsContainer(props) {
     const postId = Number(props.match.params.id);
@@ -22,5 +22,5 @@ export default function PostDetailsContainer(props) {
 }
 
 PostDetailsContainer.propTypes = {
-    match: propTypes.object.isRequired
+    match: PropTypes.object.isRequired
 };
