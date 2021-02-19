@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { createPost } from '../../actions/postActions';
-import { useDispatch } from 'react-redux';
+import { createPost, updatePostId } from '../../actions/postActions';
+import { getPostId } from '../../selectors/postSelectors';
+import { useDispatch, useSelector } from 'react-redux';
 
 const PostForm = () => {
     const dispatch = useDispatch();
+    const postId = useSelector(getPostId);
 
     const [title, setTitle] = useState();
     const [body, setBody] = useState();
-    const [id, setId] = useState(1);
-
 
     const handleSubmit = event => {
         event.preventDefault();
-        dispatch(createPost({ title, body, id }));
-        setId(id + 1);
+        dispatch(createPost({ title, body, postId }));
+        dispatch(updatePostId(postId));
     };
 
     return (

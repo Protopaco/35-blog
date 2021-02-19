@@ -1,7 +1,8 @@
-import { CREATE_POST, DELETE_POST } from '../actions/postActions';
+import { CREATE_POST, DELETE_POST, UPDATE_POST_ID } from '../actions/postActions';
 
 const initialState = {
-    posts: []
+    posts: [],
+    postId: 1
 };
 
 export default function reducer(state = initialState, action) {
@@ -14,7 +15,13 @@ export default function reducer(state = initialState, action) {
         case DELETE_POST:
             return {
                 ...state,
-                posts: state.posts.filter(post => post.id !== action.payload)
+                posts: state.posts.filter(post => post.postId !== action.payload)
+            };
+        case UPDATE_POST_ID:
+            return {
+                ...state,
+                posts: state.posts,
+                postId: state.postId + 1
             };
         default:
             return state;

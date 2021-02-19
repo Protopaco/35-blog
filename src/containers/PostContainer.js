@@ -1,6 +1,6 @@
 import React from 'react';
-import PostList from '../posts/PostList.jsx';
-import PostForm from '../form/PostForm';
+import PostList from '../components/posts/PostList';
+import PostForm from '../components/form/PostForm';
 
 export default function PostContainer() {
     return <>

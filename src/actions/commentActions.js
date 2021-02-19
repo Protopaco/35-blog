@@ -16,3 +16,8 @@ export const deleteAllComments = postId => ({
     paylod: postId
 });
 
+export const UPDATE_COMMENT_ID = 'UPDATE_COMMENT_ID';
+export const updateCommentId = commentId => ({
+    type: UPDATE_COMMENT_ID,
+    payload: commentId
+});

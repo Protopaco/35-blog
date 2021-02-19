@@ -1,6 +1,6 @@
 import React from 'react';
 import PostContainer from '../../containers/PostContainer';
-import PostDetails from '../../containers/PostDetails';
+import PostDetailsContainer from '../../containers/PostDetailsContainer';
 import {
   BrowserRouter as Router,
   Route,
@@ -19,7 +19,7 @@ export default function App() {
         <Switch>
           <Route
             exact path="/post/:id"
-            render={(routerProps) => <PostDetails {...routerProps} />} />
+            render={(routerProps) => <PostDetailsContainer {...routerProps} />} />
         </Switch>
       </Router>
     </>
