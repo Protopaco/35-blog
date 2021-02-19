@@ -4,7 +4,7 @@ import reducer from './postReducer';
 const newPost = {
     title: 'hello',
     body: 'world',
-    id: 5
+    PostId: 5
 };
 
 describe('post reducer tests', () => {
@@ -26,7 +26,7 @@ describe('post reducer tests', () => {
             posts: [newPost]
         };
 
-        const action = deletePost(newPost.id);
+        const action = deletePost(newPost.postId);
 
         expect(reducer(state, action)).toEqual({ posts: [] });
     });
