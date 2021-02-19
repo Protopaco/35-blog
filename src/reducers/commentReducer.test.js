@@ -1,4 +1,4 @@
-import { createComment, deleteComment, deleteAllComments } from '../actions/commentActions';
+import { createComment, deleteComment, deleteAllComments, updateCommentId } from '../actions/commentActions';
 import reducer from './commentReducer';
 
 const newComment = {
@@ -47,5 +47,15 @@ describe('comment reducer tests', () => {
         expect(reducer(state, action)).toEqual({ comments: [] });
     });
 
+    it('increments the comment id', () => {
+        const state = {
+            comments: [],
+            commentId: 5
+        };
+
+        const action = updateCommentId(state);
+
+        expect(reducer(state, action)).toEqual({ comments: [], commentId: 6 });
+    });
 
 });
