@@ -6,7 +6,7 @@ const newPost = {
     postId: 5
 };
 
-describe('post selectors', () => {
+describe('testing post selectors', () => {
     it('select the list of posts from state', () => {
         const state = {
             posts: {
